@@ -1,18 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-{
-    // Start is called before the first frame update
+{ 
+
+    public UIManager uiManager;
+     
+    public bool isPaused = false;
+    public bool isGameOver = false;
+
     void Start()
     {
-        
+        uiManager = FindObjectOfType<UIManager>();
+        Time.timeScale = 1;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (isGameOver == true)
+        {
+            EndGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused == false)
+            {
+                PauseGame();
+
+            }
+            else
+            {
+                ResumeGame();
+            }
+
+        }
+    }
+
+
+    public void PlayerScored(int score) //玩家蒐集記數
+    {
+        uiManager.IncreaseScore(score);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        uiManager.ShowGamePauseMenu();
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        uiManager.gameOverMenu.SetActive(false);
+        uiManager.gamePauseMenu.SetActive(false);
+        isPaused = false;
+
+    }
+
+    public void EndGame()
+    { 
+        uiManager.ShowGameOverMenu(); 
+        Time.timeScale = 0; 
+    }
+
+    public void RestartGame()
+    {
+        // 載入當前場景以重新開始 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackToMenu()//返回主畫面
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
