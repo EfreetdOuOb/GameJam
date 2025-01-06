@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c3fe2283a96324b81f57be00037707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 5
   jumpForce: 12
   groundLayer:
     serializedVersion: 2
@@ -2389,7 +2389,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6319,7 +6319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6519907869039976016, guid: f7458f9f48cdfa94d95848fd091aeb90, type: 3}
       propertyPath: m_GravityScale
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6519907869039976016, guid: f7458f9f48cdfa94d95848fd091aeb90, type: 3}
       propertyPath: m_CollisionDetection
@@ -6364,6 +6364,10 @@ PrefabInstance:
     - target: {fileID: 7116728282426052959, guid: f7458f9f48cdfa94d95848fd091aeb90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9066298677522529611, guid: f7458f9f48cdfa94d95848fd091aeb90, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

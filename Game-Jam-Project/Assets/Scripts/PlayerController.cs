@@ -9,13 +9,12 @@ public class PlayerController : MonoBehaviour
     [Header("Player")]
     [SerializeField] public float moveSpeed;
     [SerializeField] public float jumpForce;
-    [SerializeField] private LayerMask groundLayer;
+
 
     private Rigidbody2D rb2d;
     private Animator animator;
     private BaseState currentState;
-    private bool isGrounded ;
-    private float jumpTime;
+    private bool isGrounded;
 
     private void Awake()
     {
@@ -32,7 +31,7 @@ public class PlayerController : MonoBehaviour
         currentState.Update();
         Face();
 
-        if (Input.GetButtonDown("Jump") && isGrounded )
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
         }
@@ -40,15 +39,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        currentState.FixedUpdate();
-        if (isGrounded == false)
-        {
-            jumpTime += Time.fixedDeltaTime;
-            if (jumpTime > 0.1f && rb2d.Cast(Vector2.down, new RaycastHit2D[10], 0.1f) > 0)
-            {
-                isGrounded= true;
-            }
-        }
+        currentState.FixedUpdate(); 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -67,12 +58,9 @@ public class PlayerController : MonoBehaviour
     }
         
     public void Stop()
-    {
+    { 
         rb2d.velocity = new Vector2(0, rb2d.velocity.y);
-    } 
-     
-    
-     
+    }  
     public void Face()
     {
         bool flipped = GetComponentInChildren<SpriteRenderer>().flipX;
@@ -84,6 +72,16 @@ public class PlayerController : MonoBehaviour
         {
             GetComponentInChildren<SpriteRenderer>().flipX = false;
         } 
+    }
+
+    public void Jump()
+    {
+        rb2d.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    public bool PressedJumpKey()
+    {
+        return Input.GetButtonDown("Jump");
     }
 
     public void PlayAnimation(string clip)
@@ -101,11 +99,5 @@ public class PlayerController : MonoBehaviour
     {
         currentState = state;
     }
-    private void Jump()
-    {
-        isGrounded = false;
-        jumpTime = 0;
-        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce); 
-    }
-     
+
 }
