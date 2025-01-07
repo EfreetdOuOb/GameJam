@@ -78,4 +78,20 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Button"))
+        { 
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Score"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
+
 }
