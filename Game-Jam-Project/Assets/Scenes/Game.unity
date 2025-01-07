@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (Purple)
       objectReference: {fileID: 0}
+    - target: {fileID: 1240877087450126403, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 1317386784880767783, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6857644
@@ -380,6 +384,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5249226
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3213243
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03393352
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06786585
+      objectReference: {fileID: 0}
     - target: {fileID: 3103453644675995671, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
       propertyPath: m_Name
       value: Score (2)
@@ -627,6 +647,10 @@ PrefabInstance:
     - target: {fileID: 1240877087450126403, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
       propertyPath: m_Name
       value: Door (Green)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240877087450126403, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 1317386784880767783, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1208,6 +1232,10 @@ PrefabInstance:
     - target: {fileID: 1240877087450126403, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
       propertyPath: m_Name
       value: Door(Yellow)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240877087450126403, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 1317386784880767783, guid: 3b508a4874f96654a855576b08a825ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2152,7 +2180,7 @@ GameObject:
   - component: {fileID: 1326039935}
   m_Layer: 0
   m_Name: Door(End)
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6719,6 +6747,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4570541
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3891845
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0000007748604
+      objectReference: {fileID: 0}
     - target: {fileID: 3103453644675995671, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
       propertyPath: m_Name
       value: Score (1)
@@ -6926,6 +6970,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922437700}
   m_CullTransparentMesh: 1
+--- !u!1 &2052343039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3103453644675995671, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+  m_PrefabInstance: {fileID: 471864677788045891}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2052343042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052343039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa0b6150aafd774684e18b489f2cd46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2092630361
 GameObject:
   m_ObjectHideFlags: 0
@@ -7083,8 +7144,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4923937
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2476187
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0071212053
+      objectReference: {fileID: 0}
+    - target: {fileID: -2459476424387445328, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.068398476
+      objectReference: {fileID: 0}
     - target: {fileID: 3103453644675995671, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
       propertyPath: m_Name
+      value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 3103453644675995671, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      propertyPath: m_TagString
       value: Score
       objectReference: {fileID: 0}
     - target: {fileID: 5050634169330051535, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
@@ -7130,7 +7211,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3103453644675995671, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2052343042}
   m_SourcePrefab: {fileID: 100100000, guid: 7885554044ff30b40b72d008de337cf7, type: 3}
 --- !u!1001 &867147863830483681
 PrefabInstance:
