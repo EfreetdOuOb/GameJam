@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject gamePauseMenu;
 
-    private int score;
+    private int score=0;
 
 
     void Start()
@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
 
     public void IncreaseScore(int amount)
     {
-        if (gameManager.isGameOver != false)
+        if (gameManager.isGameOver == false)
         {
             score += amount;
             UpdateScoreText();
@@ -39,6 +39,10 @@ public class UIManager : MonoBehaviour
     void UpdateScoreText()
     {
         scoreText.text = "¤w¦¬¶°: " + score.ToString()+"/3";
+        if(score >= 3)
+        {
+            gameManager.isGameOver = true;
+        }
     }
 
     public void ShowGamePauseMenu()

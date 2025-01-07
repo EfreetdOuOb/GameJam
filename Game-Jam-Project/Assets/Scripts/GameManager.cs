@@ -41,10 +41,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void PlayerScored(int score) //玩家蒐集記數
-    {
-        uiManager.IncreaseScore(score);
-    }
+    
 
     public void PauseGame()
     {
@@ -79,19 +76,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-        if (collision.gameObject.CompareTag("Button"))
-        { 
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.CompareTag("Score"))
-        {
-            Destroy(collision.gameObject);
-        }
-    }
+    
 
 
 }

@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    GameManager gameManager;
+    GameManager gameManager; 
+    UIManager uiManager;
 
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        uiManager = FindObjectOfType<UIManager>();
+    }
      
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            gameManager.PlayerScored(1);
+        { 
+                Destroy(gameObject);
+                uiManager.IncreaseScore(1); 
         }
     }
 }
