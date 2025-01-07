@@ -11,10 +11,26 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public bool isGameOver = false;
 
+    GameObject boxY, boxP, boxG;
+    GameObject btnY, btnP, btnG;
+    GameObject doorY, doorP, doorG;
+
     void Start()
     {
         uiManager = FindObjectOfType<UIManager>();
         Time.timeScale = 1;
+
+        boxY = GameObject.Find("Box(Yellow)");
+        boxP = GameObject.Find("Box (Purple)");
+        boxG = GameObject.Find("Box (Green)");
+
+        btnY = GameObject.Find("Button (Yellow)");
+        btnP = GameObject.Find("Button (Purple)");
+        btnG = GameObject.Find("Button(Green)");
+
+        doorY = GameObject.Find("Door(Yellow)");
+        doorP = GameObject.Find("Door (Green)");
+        doorG = GameObject.Find("Door (Purple)");
     }
 
     
@@ -41,7 +57,29 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
+    public void DestroyButtonAndDoor(string buttonName, string doorName)
+    {
+        GameObject button = GameObject.Find(buttonName);
+        GameObject door = GameObject.Find(doorName);
+
+        if (button != null)
+        {
+            Destroy(button);
+        }
+        else
+        {
+            Debug.LogError(buttonName + " not found!");
+        }
+
+        if (door != null)
+        {
+            Destroy(door);
+        }
+        else
+        {
+            Debug.LogError(doorName + " not found!");
+        }
+    }
 
     public void PauseGame()
     {
