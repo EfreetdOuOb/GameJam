@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 12
+  jumpCount: 1
 --- !u!1 &144301860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,7 +2992,7 @@ GameObject:
   - component: {fileID: 1823503865}
   m_Layer: 8
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

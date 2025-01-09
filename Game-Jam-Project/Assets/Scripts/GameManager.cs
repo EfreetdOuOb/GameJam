@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         uiManager = FindObjectOfType<UIManager>();
-        playerController = FindObjectOfType<PlayerController>();
+         
         Time.timeScale = 1;
 
         boxY = GameObject.Find("Box(Yellow)");

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private BaseState currentState;
     private bool isGrounded;
+    public int jumpCount = 1; //可跳躍次數 1次
 
     private void Awake()
     {
@@ -35,11 +36,24 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        
-        
-            var v = rb2d.velocity;
-            v.x = 0;
-            rb2d.velocity = v;
+        var v = rb2d.velocity;
+        v.x = 0;
+        rb2d.velocity = v; 
+
+        if(rb2d.velocity.y <= 0)
+        {
+            Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(0,-1.2f,0),Color.red);
+            var hits = Physics2D.RaycastAll(this.transform.position, Vector2.down, 1.2f);
+            foreach (var hit in hits)
+            {
+                if (hit.collider.gameObject.tag == "Ground")
+                {
+                     
+                     isGrounded = true;
+                    jumpCount = 1;
+                }
+            }
+        }
 
         
     }
@@ -52,6 +66,8 @@ public class PlayerController : MonoBehaviour
     {
         currentState.OnTriggerEnter2D(collision);
     }
+     
+    
      
     public bool PressArrowKey()
     {
@@ -83,7 +99,12 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        rb2d.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        if (jumpCount > 0)
+        {
+            rb2d.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            jumpCount -= 1; 
+        }
+        
     }
 
     public bool PressedJumpKey()
