@@ -155,6 +155,7 @@ MonoBehaviour:
   scoreText: {fileID: 1922437702}
   gameOverMenu: {fileID: 1430233669}
   gamePauseMenu: {fileID: 1263708702}
+  score: 0
 --- !u!4 &14729916
 Transform:
   m_ObjectHideFlags: 0
@@ -1686,6 +1687,7 @@ MonoBehaviour:
   uiManager: {fileID: 14729915}
   isPaused: 0
   isGameOver: 0
+  isTouchEndDoor: 0
 --- !u!4 &842404261
 Transform:
   m_ObjectHideFlags: 0
@@ -2182,6 +2184,7 @@ GameObject:
   - component: {fileID: 1326039937}
   - component: {fileID: 1326039936}
   - component: {fileID: 1326039935}
+  - component: {fileID: 1326039938}
   m_Layer: 0
   m_Name: Door(End)
   m_TagString: Door
@@ -2218,7 +2221,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.006062776, y: -0.008084074}
@@ -2301,6 +2304,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1326039938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326039934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8096799783e978f47a553be913338f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1430233669
 GameObject:
   m_ObjectHideFlags: 0

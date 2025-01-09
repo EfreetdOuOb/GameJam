@@ -6,10 +6,21 @@ public class Box : MonoBehaviour
 {
     GameManager gameManager;
 
+    private Rigidbody2D rb2d;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
+
+    void Update()
+    {
+        var v = rb2d.velocity;
+        v.x = 0;
+        rb2d.velocity = v;
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Button (Yellow)")
@@ -35,7 +46,6 @@ public class Box : MonoBehaviour
             {
                 gameManager.DestroyButtonAndDoor("Button(Green)", "Door (Green)");
             }
-        }
-
+        } 
     }
 }

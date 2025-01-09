@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameManager gameManager;
+    UIManager uiManager;
+
+     
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+        gameManager = FindObjectOfType<GameManager>();
+        uiManager = FindObjectOfType<UIManager>();
+    } 
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+         
+        if (collision.CompareTag("Player"))  
+        {
+             
+            if (uiManager.score >= 3)
+            {
+                gameManager.EndGame();  
+            }
+        }
     }
 }

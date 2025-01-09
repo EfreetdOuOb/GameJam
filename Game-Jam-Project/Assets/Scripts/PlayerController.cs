@@ -35,6 +35,13 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        
+        
+            var v = rb2d.velocity;
+            v.x = 0;
+            rb2d.velocity = v;
+
+        
     }
 
     void FixedUpdate()

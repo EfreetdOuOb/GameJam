@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 { 
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
      
     public bool isPaused = false;
     public bool isGameOver = false;
+    public bool isTouchEndDoor = false;
+     
 
     GameObject boxY, boxP, boxG;
     GameObject btnY, btnP, btnG;
@@ -18,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         uiManager = FindObjectOfType<UIManager>();
+        playerController = FindObjectOfType<PlayerController>();
         Time.timeScale = 1;
 
         boxY = GameObject.Find("Box(Yellow)");
@@ -39,21 +43,18 @@ public class GameManager : MonoBehaviour
         if (isGameOver == true)
         {
             EndGame();
-        }
-
+        } 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused == false)
             {
-                PauseGame();
-
+                PauseGame(); 
             }
             else
             {
                 ResumeGame();
-            }
-
-        }
+            } 
+        }  
     }
 
 
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     { 
         uiManager.ShowGameOverMenu(); 
-        Time.timeScale = 0; 
+        Time.timeScale = 0;  
     }
 
     public void RestartGame()
