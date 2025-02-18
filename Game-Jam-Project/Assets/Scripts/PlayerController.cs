@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private BaseState currentState;
     private bool isGrounded;
-    public int jumpCount = 1; //�i���D���� 1��
+    public int jumpCount = 1; //跳躍次數 1次
 
     private void Awake()
     {
@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
         v.x = 0;
         rb2d.velocity = v; 
 
+        // 重置 isGrounded 狀態
+        isGrounded = false;
+
         if(rb2d.velocity.y <= 0)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + new Vector3(0,-1.2f,0),Color.red);
@@ -48,14 +51,12 @@ public class PlayerController : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Ground")
                 {
-                     
-                     isGrounded = true;
+                    isGrounded = true;
                     jumpCount = 1;
+                    break;  // 找到地面就可以跳出循環
                 }
             }
         }
-
-        
     }
 
     void FixedUpdate()
@@ -127,5 +128,7 @@ public class PlayerController : MonoBehaviour
     {
         currentState = state;
     }
+
+     
 
 }

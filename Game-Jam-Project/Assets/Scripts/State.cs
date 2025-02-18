@@ -44,7 +44,7 @@ public class Idle : BaseState
 
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ÀË´ú¨ì¸I¼²: " + collision.name);
+        Debug.Log("æª¢æ¸¬åˆ°ç¢°æ’ž: " + collision.name);
 
     }
 
@@ -77,7 +77,7 @@ public class Walk : BaseState
     }
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ÀË´ú¨ì¸I¼²: " + collision.name);
+        Debug.Log("æª¢æ¸¬åˆ°ç¢°æ’ž: " + collision.name);
 
     }
 }
@@ -109,7 +109,7 @@ public class Jump : BaseState
     }
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ÀË´ú¨ì¸I¼²: " + collision.name);
+        Debug.Log("æª¢æ¸¬åˆ°ç¢°æ’ž: " + collision.name);
 
     }
 
